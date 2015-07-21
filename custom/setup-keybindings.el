@@ -5,11 +5,6 @@
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
 
-;; Completion that uses many different methods to find options.
-(global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
-(global-set-key (kbd "C-:") 'hippie-expand-lines)
-(global-set-key (kbd "C-,") 'completion-at-point)
-
 ;; Smart M-x
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -54,11 +49,6 @@
 (global-set-key (kbd "<M-s-p>") 'move-text-down)
 (global-set-key (kbd "<C-S-up>") 'move-text-up)
 
-;; Fold the active region
-(global-set-key (kbd "C-c C-f") 'fold-this-all)
-(global-set-key (kbd "C-c C-F") 'fold-this)
-(global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
-
 ;; Buffer file functions
 (global-set-key (kbd "C-x t") 'touch-buffer-file)
 (global-set-key (kbd "C-x C-r") 'rename-current-buffer-file)
@@ -67,6 +57,33 @@
 ;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
+
+
+;; Completion that uses many different methods to find options.
+(global-set-key (kbd "M-/") 'hippie-expand-no-case-fold)
+(global-set-key (kbd "C-:") 'hippie-expand-lines)
+(global-set-key (kbd "C-,") 'completion-at-point)
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+
+(global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "C-r") 'isearch-backward-regexp)
+(global-set-key (kbd "C-M-s") 'isearch-forward)
+(global-set-key (kbd "C-M-r") 'isearch-backward)
+
+(global-set-key [C-S-right] 'shift-right)
+(global-set-key [C-S-left] 'shift-left)
+
+
+(eval-after-load "coffee-mode"
+  '(progn
+     (define-key coffee-mode-map (kbd "C-/") 'jasmine-coffee/toggle-spec-enabled)
+     (define-key coffee-mode-map (kbd "C-j") 'coffee-newline-and-indent)))
+
+(global-set-key (kbd "C-c C-f") 'fold-this-all)
+(global-set-key (kbd "C-c C-F") 'fold-this)
+(global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
 
 (provide 'setup-keybindings)
 ;;; setup-keybindings ends here

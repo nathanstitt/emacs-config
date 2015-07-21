@@ -50,4 +50,12 @@
 
 (rename-modeline "js2-mode" js2-mode "JS2")
 
+(require 'whitespace)
+(setq whitespace-line-column 120) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+(setq whitespace-style '(face tabs empty trailing lines-tail))
+(global-whitespace-mode 1)
+
+(setq column-number-mode t)
+
 (provide 'appearance)

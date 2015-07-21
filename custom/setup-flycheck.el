@@ -1,8 +1,11 @@
+;;;; setup-flycheck -- custom stuff for flycheck mode
+;;; Commentary:
+;;; Code:
 (require 'flycheck)
 
 (global-flycheck-mode)
 
-(defun magnars/adjust-flycheck-automatic-syntax-eagerness ()
+(defun nas/adjust-flycheck-automatic-syntax-eagerness ()
   "Adjust how often we check for errors based on if there are any.
 
 This lets us fix any errors as quickly as possible, but in a
@@ -15,7 +18,7 @@ clean buffer we're an order of magnitude laxer about checking."
 (make-variable-buffer-local 'flycheck-idle-change-delay)
 
 (add-hook 'flycheck-after-syntax-check-hook
-          'magnars/adjust-flycheck-automatic-syntax-eagerness)
+          'nas/adjust-flycheck-automatic-syntax-eagerness)
 
 ;; Remove newline checks, since they would trigger an immediate check
 ;; when we want the idle-change-delay to be in effect while editing.
@@ -35,3 +38,4 @@ up before you execute another command."
   (flycheck-buffer-automatically 'idle-change))
 
 (provide 'setup-flycheck)
+;;; setup-flycheck.el ends here

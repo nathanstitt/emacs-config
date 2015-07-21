@@ -76,6 +76,4 @@ re-downloaded in order to locate PACKAGE."
    (init--install-packages)))
 
 
-(custom-set-variables '(coffee-tab-width 4))
-
 (provide 'setup-package)
