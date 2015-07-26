@@ -73,6 +73,7 @@
 (require 'smartparens-config)
 (require 'jasmine-coffee)
 (require 'setup-coffee-mode)
+(require 'setup-magit)
 (require 'nas-whitespace-cleanup)
 (require 'rvm)
 (rvm-use-default)
