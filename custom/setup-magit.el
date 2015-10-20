@@ -9,3 +9,5 @@
 (advice-add 'magit-push-popup :around #'magit-push-arguments-maybe-upstream)
 
 (setq magit-completing-read-function #'magit-ido-completing-read)
+
+(provide 'setup-magit)
