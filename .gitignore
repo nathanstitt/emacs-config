@@ -23,3 +23,5 @@ session*
 .cask
 tramp
 /var/pcache
+/backups
+ac-comphist.dat
