@@ -74,6 +74,7 @@
 (require 'jasmine-coffee)
 (require 'setup-coffee-mode)
 (require 'setup-magit)
+(require 'setup-jsx)
 (require 'nas-whitespace-cleanup)
 (require 'rvm)
 (rvm-use-default)
