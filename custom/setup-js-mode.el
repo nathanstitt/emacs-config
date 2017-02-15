@@ -1,4 +1,5 @@
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
 
 (defadvice web-mode-highlight-part (around tweak-jsx activate)
   (if (equal web-mode-content-type "jsx")
@@ -12,6 +13,7 @@
   ;;; http://web-mode.org/
   (setq web-mode-markup-indent-offset 4)
   (setq web-mode-css-indent-offset 4)
+  (setq web-mode-enable-auto-quoting nil)
   (setq web-mode-code-indent-offset 4))
 (add-hook 'web-mode-hook  'ns-web-mode-hook)
 
@@ -24,5 +26,8 @@
 ;; use eslint with web-mode for jsx files
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 
-(provide 'setup-jsx)
+;; and for javascript mode
+(flycheck-add-mode 'javascript-eslint 'javascript-mode)
+
+(provide 'setup-js-mode)
 ;;; setup-jsx.el ends here

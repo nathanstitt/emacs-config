@@ -52,7 +52,6 @@ re-downloaded in order to locate PACKAGE."
      highlight-escape-sequences
      whitespace-cleanup-mode
      elisp-slime-nav
-     git-commit-mode
      gitconfig-mode
      gitignore-mode
      enh-ruby-mode

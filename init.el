@@ -1,4 +1,11 @@
 ;; add .emacs.d/custom to load path
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq site-lisp-dir
       (expand-file-name "custom" user-emacs-directory))
 
@@ -67,6 +74,12 @@
       (load file))))
 
 
+; add homebrew installed packages to loadpath
+(let ((default-directory "/usr/local/share/emacs/site-lisp/"))
+  (normal-top-level-add-subdirs-to-load-path))
+
+(add-hook 'after-init-hook 'global-company-mode)
+
 (require 'setup-flycheck)
 (require 'setup-rebox2)
 (require 'setup-ruby)
@@ -74,8 +87,11 @@
 (require 'jasmine-coffee)
 (require 'setup-coffee-mode)
 (require 'setup-magit)
-(require 'setup-jsx)
+(require 'nas-setup-alignment)
+(require 'setup-js-mode)
+(require 'setup-utf-chars)
 (require 'nas-whitespace-cleanup)
+(require 'setup-platformio)
 (require 'rvm)
 (rvm-use-default)
 
