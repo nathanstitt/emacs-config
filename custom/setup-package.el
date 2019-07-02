@@ -34,6 +34,7 @@ re-downloaded in order to locate PACKAGE."
   (packages-install
    '(magit
      paredit
+     dumb-jump
      move-text
      gist
      htmlize
@@ -67,6 +68,7 @@ re-downloaded in order to locate PACKAGE."
      undo-tree
      rebox2
      jsx-mode
+     web-mode
      coffee-mode)))
 
 (condition-case nil

@@ -2,8 +2,11 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
 ;; Align your code in a pretty way.
+(global-set-key (kbd "C-x :") 'align-to-colon)
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
+;; unbind exit
+(global-set-key (kbd "C-x C-c") nil)
 
 ;; Smart M-x
 (global-set-key (kbd "M-x") 'smex)
@@ -13,15 +16,21 @@
 ;; Use C-x C-m to do M-x per Steve Yegge's advice
 (global-set-key (kbd "C-x C-m") 'smex)
 
+(global-set-key (kbd "M-n") 'next-error)
+(global-set-key (kbd "M-p") 'previous-error)
+
 ;; Perform general cleanup.
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 (global-set-key (kbd "C-c C-n") 'cleanup-buffer)
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 (global-set-key (kbd "C-l") 'switch-to-previous-buffer)
+(global-set-key (kbd "C-U") 'universal-argument)
+
 
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
 
+(global-set-key (kbd "M-s-r") 'query-replace)
 
 ;; Zap to char
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -37,6 +46,11 @@
 (global-set-key (kbd "C-x m") 'magit-status)
 (autoload 'magit-status "magit")
 
+;; ag
+(global-set-key (kbd "C-x C-a") 'ag-project)
+
+;; projectile
+(global-set-key (kbd "C-x C-c") 'projectile-find-file)
 
 ;; Clever newlines
 (global-set-key (kbd "C-o") 'open-line-and-indent)
@@ -84,6 +98,8 @@
 (global-set-key (kbd "C-c C-f") 'fold-this-all)
 (global-set-key (kbd "C-c C-F") 'fold-this)
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
+
+(global-set-key (kbd "C-u") 'save-buffer)
 
 (provide 'setup-keybindings)
 ;;; setup-keybindings ends here

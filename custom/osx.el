@@ -11,7 +11,7 @@
 ;;   (setq magnars/presentation-font "-apple-Monaco-medium-normal-normal-*-28-*-*-*-m-0-iso10646-1")
 ;;   (set-face-attribute 'default nil :font magnars/default-font))
 
-(set-face-attribute 'default nil :family "Inconsolata")
+(set-face-attribute 'default nil :family "Input Mono")
 (set-face-attribute 'default nil :height 165)
 
 ;; keybinding to toggle full screen mode
@@ -20,9 +20,6 @@
 ;; Move to trash when deleting stuff
 (setq delete-by-moving-to-trash t
       trash-directory "~/.Trash/emacs")
-
-;; Ignore .DS_Store files with ido mode
-(add-to-list 'ido-ignore-files "\\.DS_Store")
 
 ;; Don't open files from the workspace in a new frame
 (setq ns-pop-up-frames nil)

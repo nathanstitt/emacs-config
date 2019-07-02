@@ -14,9 +14,7 @@
 ;; Keep emacs Custom-settings in separate file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
-(setq ido-use-filename-at-point 'guess)
+
 (autoload 'zap-up-to-char "misc"
   "Kill up to, but not including ARGth occurrence of CHAR." t)
 
@@ -79,7 +77,8 @@
   (normal-top-level-add-subdirs-to-load-path))
 
 (add-hook 'after-init-hook 'global-company-mode)
-
+(setq company-dabbrev-downcase nil)
+(require 'list-utils)
 (require 'setup-flycheck)
 (require 'setup-rebox2)
 (require 'setup-ruby)
@@ -87,14 +86,22 @@
 (require 'jasmine-coffee)
 (require 'setup-coffee-mode)
 (require 'setup-magit)
+(require 'nas-ido-mode)
 (require 'nas-setup-alignment)
 (require 'setup-js-mode)
 (require 'setup-utf-chars)
 (require 'nas-whitespace-cleanup)
+(require 'nas-go)
+(require 'nas-typescript)
+(require 'nas-compilation)
 (require 'setup-platformio)
 (require 'rvm)
-(rvm-use-default)
 
+(add-to-list 'load-path "~/.emacs.d/custom/es6-snippets")
+(require 'es6-snippets)
+
+(rvm-use-default)
+(dumb-jump-mode)
 ; After all functions are defined
 (require 'setup-keybindings)
 
@@ -115,6 +122,7 @@
  kept-old-versions 2
  version-control t)
 
+(editorconfig-mode 1)
 
 ; Replace "yes" or "no" resonses with
 ; "y" or "n".
@@ -123,5 +131,8 @@
 
 ; Bump up the GC threshold to 20MB.
 (setq gc-cons-threshold 20000000)
+(setq ag-reuse-buffers 't)
 
-;;; init.el ends here
+
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)

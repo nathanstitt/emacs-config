@@ -7,7 +7,6 @@
            (cons "--set-upstream" magit-push-arguments))))
     (apply magit-push-popup-fun args)))
 (advice-add 'magit-push-popup :around #'magit-push-arguments-maybe-upstream)
-
-(setq magit-completing-read-function #'magit-ido-completing-read)
+(setq magit-completing-read-function 'magit-ido-completing-read)
 
 (provide 'setup-magit)

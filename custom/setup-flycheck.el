@@ -5,6 +5,8 @@
 
 (global-flycheck-mode)
 
+(setq flycheck-global-modes '(not scss-mode))
+
 (defun nas/adjust-flycheck-automatic-syntax-eagerness ()
   "Adjust how often we check for errors based on if there are any.
 
