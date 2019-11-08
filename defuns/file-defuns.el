@@ -1,13 +1,15 @@
 ;; Defuns for working with files
 
+;; https://stackoverflow.com/a/37456354
 (defun rename-current-buffer-file ()
   "Renames current buffer and file it is visiting."
   (interactive)
-  (let ((name (buffer-name))
-        (filename (buffer-file-name)))
+  (let* ((name (buffer-name))
+         (filename (buffer-file-name))
+         (basename (file-name-nondirectory filename)))
     (if (not (and filename (file-exists-p filename)))
         (error "Buffer '%s' is not visiting a file!" name)
-      (let ((new-name (read-file-name "New name: " filename)))
+      (let ((new-name (read-file-name "New name: " (file-name-directory filename) basename nil basename)))
         (if (get-buffer new-name)
             (error "A buffer named '%s' already exists!" new-name)
           (rename-file filename new-name 1)

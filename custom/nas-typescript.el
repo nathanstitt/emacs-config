@@ -27,4 +27,5 @@
 ;; enable typescript-tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
 
+
 (provide 'nas-typescript)

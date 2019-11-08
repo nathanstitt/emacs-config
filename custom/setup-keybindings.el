@@ -25,12 +25,14 @@
 (global-set-key (kbd "C-c C-<return>") 'delete-blank-lines)
 
 (global-set-key (kbd "C-l") 'switch-to-previous-buffer)
-(global-set-key (kbd "C-U") 'universal-argument)
+;; (global-set-key (kbd "C-i") 'universal-argument)
 
 
 (global-set-key (kbd "M-h") 'kill-region-or-backward-word)
 
 (global-set-key (kbd "M-s-r") 'query-replace)
+
+(global-set-key (kbd "M-o") 'ace-window)
 
 ;; Zap to char
 (global-set-key (kbd "M-z") 'zap-up-to-char)
@@ -99,7 +101,22 @@
 (global-set-key (kbd "C-c C-F") 'fold-this)
 (global-set-key (kbd "C-c M-f") 'fold-this-unfold-all)
 
-(global-set-key (kbd "C-u") 'save-buffer)
+(global-set-key (kbd "C-;") 'save-buffer)
+
+;; key chords
+;; (require 'key-chord)
+;; (key-chord-define-global "ss" 'save-buffer)
+;; (key-chord-define-global " i" 'previous-multiframe-window)
+;; (key-chord-define-global " o" 'next-multiframe-window)
+;; (key-chord-define-global " l" 'ibuffer)
+;; (key-chord-define-global " s" 'save-buffer)
+;; (key-chord-define-global " m" 'magit)
+;; (key-chord-define-global " r" 'recompile)
+
+;; (setq key-chord-two-keys-delay .01
+;;       key-chord-one-key-delay .02)
+
+;; (key-chord-mode +1)
 
 (provide 'setup-keybindings)
 ;;; setup-keybindings ends here
